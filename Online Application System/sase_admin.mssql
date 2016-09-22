@@ -1,0 +1,112 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Apr 16, 2016 at 10:34 AM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 5.6.15
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sase_admin`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `email` varchar(65) NOT NULL,
+  `password` char(128) NOT NULL,
+  `salt` varchar(64) NOT NULL,
+  `first_name` varchar(20) NOT NULL,
+  `last_name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `evaluation`
+--
+
+CREATE TABLE `evaluation` (
+  `applicant_id` varchar(11) NOT NULL,
+  `evaluator_email` varchar(50) NOT NULL,
+  `evaluator` varchar(30) NOT NULL,
+  `personality` char(1) NOT NULL,
+  `qualification` char(1) NOT NULL,
+  `scores` char(1) NOT NULL,
+  `work` char(1) NOT NULL,
+  `communication` char(1) NOT NULL,
+  `confidence` char(1) NOT NULL,
+  `essays` char(1) NOT NULL,
+  `achievements` char(1) NOT NULL,
+  `overall_rating` char(1) NOT NULL,
+  `strengths` varchar(60) DEFAULT NULL,
+  `weakness` varchar(60) DEFAULT NULL,
+  `recommendation` varchar(20) NOT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `professors`
+--
+
+CREATE TABLE `professors` (
+  `id` int(11) NOT NULL,
+  `email` varchar(65) NOT NULL,
+  `password` char(128) NOT NULL,
+  `salt` varchar(64) NOT NULL,
+  `first_name` varchar(20) NOT NULL,
+  `last_name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`email`),
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- Indexes for table `professors`
+--
+ALTER TABLE `professors`
+  ADD PRIMARY KEY (`email`),
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `professors`
+--
+ALTER TABLE `professors`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,306 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Apr 16, 2016 at 10:33 AM
+-- Server version: 10.1.9-MariaDB
+-- PHP Version: 5.6.15
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `sase_student`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `academic_uploads`
+--
+
+CREATE TABLE `academic_uploads` (
+  `applicant_id` varchar(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `file` varchar(100) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `size` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `critical_essay`
+--
+
+CREATE TABLE `critical_essay` (
+  `applicant_id` varchar(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `file` varchar(100) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `size` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `document_uploads`
+--
+
+CREATE TABLE `document_uploads` (
+  `applicant_id` varchar(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `x_file` varchar(100) NOT NULL,
+  `x_type` varchar(10) NOT NULL,
+  `x_size` int(11) NOT NULL,
+  `x_status` tinyint(1) NOT NULL,
+  `xii_file` varchar(100) NOT NULL,
+  `xii_type` varchar(10) NOT NULL,
+  `xii_size` int(11) NOT NULL,
+  `xii_status` tinyint(1) NOT NULL,
+  `ug_file` varchar(100) NOT NULL,
+  `ug_type` varchar(10) NOT NULL,
+  `ug_size` int(11) NOT NULL,
+  `ug_status` tinyint(1) NOT NULL,
+  `pg_file` varchar(100) NOT NULL,
+  `pg_type` varchar(10) NOT NULL,
+  `pg_size` int(11) NOT NULL,
+  `pg_status` tinyint(1) NOT NULL,
+  `gre_file` varchar(100) NOT NULL,
+  `gre_type` varchar(10) NOT NULL,
+  `gre_size` int(11) NOT NULL,
+  `gre_status` tinyint(1) NOT NULL,
+  `toefl_file` varchar(100) NOT NULL,
+  `toefl_type` varchar(10) NOT NULL,
+  `toefl_size` int(11) NOT NULL,
+  `toefl_status` tinyint(1) NOT NULL,
+  `resume_file` varchar(100) NOT NULL,
+  `resume_type` varchar(10) NOT NULL,
+  `resume_size` int(11) NOT NULL,
+  `resume_status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `education_details`
+--
+
+CREATE TABLE `education_details` (
+  `applicant_id` varchar(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `x_board` varchar(15) NOT NULL,
+  `x_inst` varchar(50) NOT NULL,
+  `x_city` varchar(30) NOT NULL,
+  `x_state` varchar(30) NOT NULL,
+  `x_major` varchar(100) NOT NULL,
+  `x_marks` int(2) NOT NULL,
+  `x_year` int(4) NOT NULL,
+  `xii_board` varchar(15) NOT NULL,
+  `xii_inst` varchar(50) NOT NULL,
+  `xii_city` varchar(30) NOT NULL,
+  `xii_state` varchar(30) NOT NULL,
+  `xii_major` varchar(100) NOT NULL,
+  `xii_marks` int(2) NOT NULL,
+  `xii_year` int(4) NOT NULL,
+  `ug_degree` varchar(30) NOT NULL,
+  `ug_major` varchar(50) NOT NULL,
+  `ug_major_other` varchar(50) DEFAULT NULL,
+  `ug_marks` decimal(3,1) NOT NULL,
+  `ug_inst` varchar(50) NOT NULL,
+  `ug_univ` varchar(50) NOT NULL,
+  `ug_city` varchar(50) NOT NULL,
+  `ug_state` varchar(50) NOT NULL,
+  `ug_year_from` int(4) NOT NULL,
+  `ug_year_to` int(4) NOT NULL,
+  `pg_degree` varchar(30) NOT NULL,
+  `pg_major` varchar(50) NOT NULL,
+  `pg_marks` decimal(3,1) NOT NULL,
+  `pg_inst` varchar(50) NOT NULL,
+  `pg_univ` varchar(50) NOT NULL,
+  `pg_year_from` int(4) NOT NULL,
+  `pg_year_to` int(4) NOT NULL,
+  `gre_awa` decimal(2,1) NOT NULL,
+  `gre_verbal` int(3) NOT NULL,
+  `gre_quant` int(3) NOT NULL,
+  `gre_total` int(3) NOT NULL,
+  `toefl_reading` int(2) NOT NULL,
+  `toefl_writing` int(2) NOT NULL,
+  `toefl_listening` int(2) NOT NULL,
+  `toefl_speaking` int(2) NOT NULL,
+  `toefl_total` int(3) NOT NULL,
+  `toefl_date` date NOT NULL,
+  `gre_date` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `essays`
+--
+
+CREATE TABLE `essays` (
+  `applicant_id` varchar(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `acads_file` varchar(100) NOT NULL,
+  `acads_type` varchar(10) NOT NULL,
+  `acads_size` int(11) NOT NULL,
+  `acads_status` tinyint(1) NOT NULL,
+  `exp_file` varchar(100) NOT NULL,
+  `exp_type` varchar(10) NOT NULL,
+  `exp_size` int(11) NOT NULL,
+  `exp_status` tinyint(1) NOT NULL,
+  `cri_file` varchar(100) NOT NULL,
+  `cri_type` varchar(10) NOT NULL,
+  `cri_size` int(11) NOT NULL,
+  `cri_status` tinyint(1) NOT NULL,
+  `photo_file` varchar(100) NOT NULL,
+  `photo_type` varchar(10) NOT NULL,
+  `photo_size` int(11) NOT NULL,
+  `photo_status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `experience_uploads`
+--
+
+CREATE TABLE `experience_uploads` (
+  `applicant_id` varchar(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `file` varchar(100) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `size` int(11) NOT NULL,
+  `status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `personal_details`
+--
+
+CREATE TABLE `personal_details` (
+  `date_of_birth` date NOT NULL,
+  `applicant_id` varchar(11) NOT NULL,
+  `gender` char(1) NOT NULL,
+  `p_address_line1` varchar(50) NOT NULL,
+  `p_address_line2` varchar(50) DEFAULT NULL,
+  `p_address_city` varchar(25) NOT NULL,
+  `p_address_state` varchar(32) NOT NULL,
+  `p_address_pincode` int(6) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `m_address_line1` varchar(50) NOT NULL,
+  `m_address_line2` varchar(50) NOT NULL,
+  `m_address_city` varchar(25) NOT NULL,
+  `m_address_pincode` int(6) NOT NULL,
+  `m_address_state` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `applicant_id` varchar(11) NOT NULL,
+  `email` varchar(65) NOT NULL,
+  `password` char(128) NOT NULL,
+  `salt` varchar(64) NOT NULL,
+  `first_name` varchar(20) NOT NULL,
+  `middle_name` varchar(20) DEFAULT NULL,
+  `last_name` varchar(20) NOT NULL,
+  `phone` varchar(10) NOT NULL,
+  `app_status` int(1) NOT NULL,
+  `validation_status` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `academic_uploads`
+--
+ALTER TABLE `academic_uploads`
+  ADD PRIMARY KEY (`applicant_id`);
+
+--
+-- Indexes for table `critical_essay`
+--
+ALTER TABLE `critical_essay`
+  ADD PRIMARY KEY (`applicant_id`);
+
+--
+-- Indexes for table `document_uploads`
+--
+ALTER TABLE `document_uploads`
+  ADD PRIMARY KEY (`applicant_id`);
+
+--
+-- Indexes for table `education_details`
+--
+ALTER TABLE `education_details`
+  ADD PRIMARY KEY (`applicant_id`),
+  ADD KEY `email` (`email`);
+
+--
+-- Indexes for table `essays`
+--
+ALTER TABLE `essays`
+  ADD PRIMARY KEY (`applicant_id`);
+
+--
+-- Indexes for table `experience_uploads`
+--
+ALTER TABLE `experience_uploads`
+  ADD PRIMARY KEY (`applicant_id`);
+
+--
+-- Indexes for table `personal_details`
+--
+ALTER TABLE `personal_details`
+  ADD PRIMARY KEY (`applicant_id`),
+  ADD KEY `email` (`email`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`email`),
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `personal_details`
+--
+ALTER TABLE `personal_details`
+  ADD CONSTRAINT `personal_details_ibfk_1` FOREIGN KEY (`email`) REFERENCES `users` (`email`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
